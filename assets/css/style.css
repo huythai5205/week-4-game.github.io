@@ -1,0 +1,19 @@
+.container {
+    width: 1200px;
+    height: 800px;
+    background-image: url("../images/heroes.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    border-style: outset;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.hero-img {
+    width: 200px;
+}
+
+.fight-section {
+    padding-top: 100px;
+}
