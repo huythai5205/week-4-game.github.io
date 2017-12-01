@@ -4,6 +4,7 @@ var oBatman = {
     attack: 6,
     counter: 100,
     image: "../assets/images/batman.jpg",
+    themeSong: "../assets/musics/batman_theme.mp3",
     setHealth: function (damage) {
         this.health -= damage;
     },

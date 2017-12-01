@@ -4,8 +4,10 @@ $(document).ready(function () {
     var hero;
     var opponent;
     var opponentSelected = false;
+    var themeSong = undefined;
 
     function startGame() {
+        playThemeSong('../assets/musics/justice_league.mp3');
         aHeroes = [oSuperman, oBatman, oWonderWoman, oAquaman];
         $('.select-hero').html(`
         <div class="row">
@@ -47,11 +49,21 @@ $(document).ready(function () {
     function renderOpponent() {
         $('.defender-area').empty();
         $('.defender-area').html(`<h5>${opponent.id}</h5><img class="img-fluid" src=${opponent.image} id=${opponent.id}> <h5>${opponent.health}</h5>`);
+    };
+
+    function playThemeSong(theme) {
+        if (themeSong !== undefined) {
+            themeSong.pause();
+        }
+        themeSong = new Audio(theme);
+        themeSong.loop = true;
+        themeSong.play();
     }
 
     $(document).on('click', '.hero-img', function () {
         hero = aHeroes[aHeroes.findIndex(i => i.id === $(this).attr("id"))];
         aHeroes.splice(aHeroes.findIndex(i => i.id === hero.id), 1);
+        playThemeSong(hero.themeSong);
         renderHero();
         renderSelections();
     });
@@ -85,7 +97,6 @@ $(document).ready(function () {
             var str = "Please select an opponent.";
             $('.defender-area').append(str);
         } else {
-
             var heroAttack = hero.attack;
             var opponentAttack = opponent.attack;
             opponent.setHealth(heroAttack);
@@ -110,7 +121,5 @@ $(document).ready(function () {
                 $('.defender-area').append(str);
             }
         }
-
     });
-
 });

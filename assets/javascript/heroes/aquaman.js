@@ -4,6 +4,7 @@ var oAquaman = {
     attack: 100,
     counter: 99,
     image: "../assets/images/aquaman.jpg",
+    themeSong: "../assets/musics/aquaman_theme.mp3",
     setHealth: function (damage) {
         this.health -= damage;
     },
