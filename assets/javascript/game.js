@@ -110,9 +110,15 @@ $(document).ready(function () {
                 var button = `<button id = "restart-button"> Restart </button>`;
                 $('.defender-area').append(str).append(button);
             } else if (opponent.health < 1) {
-                var str = `You have defeated ${opponent.id}, you can choose to fight another opponent.`;
-                opponentSelected = false;
-                $('.defender-area').empty().append(str);
+                if (aHeroes.length === 0) {
+                    var button = '<button id="restart-button">New Game</button>';
+                    str = 'You have won! ';
+                    $('.defender-area').empty().append(str).append(button);
+                } else {
+                    var str = `You have defeated ${opponent.id}, you can choose to fight another opponent.`;
+                    opponentSelected = false;
+                    $('.defender-area').empty().append(str);
+                }
                 renderHero();
             } else {
                 renderHero();

@@ -1,18 +1,18 @@
 var oSuperman = {
     id: "Superman",
-    health: 100,
-    attack: 6,
-    counter: 100,
+    health: 120,
+    attack: 8,
+    counter: 15,
     image: "../assets/images/superman.jpg",
     themeSong: "../assets/musics/superman_theme.mp3",
     setHealth: function (damage) {
         this.health -= damage;
     },
     setAttack: function () {
-        this.attack += 6;
+        this.attack += 8;
     },
     reset: function () {
-        this.health = 100;
-        this.attack = 6;
+        this.health = 120;
+        this.attack = 8;
     }
 }

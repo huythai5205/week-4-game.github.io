@@ -1,8 +1,8 @@
 var oBatman = {
     id: "Batman",
-    health: 100,
-    attack: 6,
-    counter: 100,
+    health: 150,
+    attack: 8,
+    counter: 5,
     image: "../assets/images/batman.jpg",
     themeSong: "../assets/musics/batman_theme.mp3",
     setHealth: function (damage) {
@@ -12,7 +12,7 @@ var oBatman = {
         this.attack += 6;
     },
     reset: function () {
-        this.health = 100;
-        this.attack = 6;
+        this.health = 150;
+        this.attack = 8;
     }
 }
