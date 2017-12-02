@@ -98,7 +98,7 @@ $(document).ready(function () {
             $('.defender-area').append(str);
         } else {
             var heroAttack = hero.attack;
-            var opponentAttack = opponent.attack;
+            var opponentAttack = opponent.counter;
             opponent.setHealth(heroAttack);
             hero.setHealth(opponentAttack);
             hero.setAttack();
